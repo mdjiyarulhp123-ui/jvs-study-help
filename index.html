@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#15803d">
+<meta name="description" content="JVS Help Study - कक्षा 6 से 10 तक मुफ्त पढ़ाई, MCQ Quiz, Notes और टेस्ट।">
+<title>JVS Help Study | ऑनलाइन पढ़ाई</title>
+<style>
+:root {
+  --green:#15803d;
+  --dark:#14532d;
+  --light:#dcfce7;
+  --bg:#f4faf5;
+  --white:#fff;
+  --text:#183322;
+  --muted:#647568;
+  --border:#dce9df;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;
+  line-height:1.6
+}
+button,input,select,textarea{font:inherit}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+header{
+  background:var(--green);color:white;padding:15px 16px;
+  position:sticky;top:0;z-index:10;
+  box-shadow:0 3px 12px #00000012
+}
+.nav{max-width:1100px;margin:auto;display:flex;
+  align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-size:21px;font-weight:850;letter-spacing:.2px}
+.brand span{color:#bbf7d0}
+nav{display:flex;gap:7px;flex-wrap:wrap}
+nav a{font-size:13px;padding:7px 9px;border-radius:8px}
+nav a:hover{background:#ffffff24}
+.hero{
+  padding:48px 18px;text-align:center;
+  background:linear-gradient(145deg,#dcfce7,#fff 70%)
+}
+.hero h1{font-size:clamp(29px,6vw,46px);line-height:1.25;
+  color:var(--dark);margin:0 0 12px}
+.hero p{max-width:600px;margin:0 auto 22px;color:#486151}
+.btn{
+  border:0;border-radius:10px;background:var(--green);
+  color:white;padding:11px 16px;font-weight:700;display:inline-block
+}
+.btn:hover{background:var(--dark)}
+.btn.secondary{background:#e8f5eb;color:var(--dark)}
+.btn.danger{background:#b91c1c}
+.container{max-width:1050px;margin:auto;padding:24px 16px}
+.section-title{font-size:24px;color:var(--dark);margin:0 0 5px}
+.subtitle{margin:0 0 20px;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{
+  background:white;border:1px solid var(--border);
+  border-radius:15px;padding:17px;box-shadow:0 4px 15px #163a2010;
+  min-width:0
+}
+.class-card{text-align:center}
+.class-icon{font-size:30px}
+.card h3{margin:5px 0;color:var(--dark)}
+.card p{margin:5px 0 12px;color:var(--muted);font-size:14px}
+.panel{background:white;border:1px solid var(--border);
+  border-radius:15px;padding:18px;margin-top:14px}
+label{display:block;font-weight:650;margin:12px 0 5px}
+input,select,textarea{
+  width:100%;padding:11px;border:1px solid #cbd9ce;
+  border-radius:9px;background:white;color:var(--text);outline-color:var(--green)
+}
+textarea{resize:vertical}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.question{padding:14px 0;border-bottom:1px solid var(--border)}
+.question:last-child{border-bottom:0}
+.question p{font-weight:750;margin:0 0 9px}
+.option{
+  display:flex;align-items:flex-start;gap:9px;padding:9px;
+  margin:6px 0;border:1px solid var(--border);border-radius:9px;
+  cursor:pointer;font-weight:400
+}
+.option input{width:auto;margin-top:5px;accent-color:var(--green)}
+.correct{background:#dcfce7;border-color:#22c55e}
+.wrong{background:#fee2e2;border-color:#ef4444}
+.notice{padding:12px;background:#ecfdf5;border-radius:10px;color:var(--dark);margin:12px 0}
+.result{text-align:center;padding:20px;background:#ecfdf5;border-radius:12px}
+.score-number{font-size:34px;font-weight:850;color:var(--green)}
+.hidden{display:none!important}
+.note-item{border-bottom:1px solid var(--border);padding:12px 0}
+.note-item:last-child{border-bottom:0}
+.note-item a{color:var(--green);font-weight:700;text-decoration:underline}
+.video-frame{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#e5e7eb}
+footer{background:#14532d;color:white;text-align:center;padding:25px 16px;margin-top:25px}
+footer p{margin:5px}
+.small{font-size:12px;color:var(--muted)}
+footer .small{color:#d1fae5}
+@media(max-width:650px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav{justify-content:center}
+  nav{justify-content:center}
+  nav a{padding:6px;font-size:12px}
+  .hero{padding:36px 16px}
+  .controls{grid-template-columns:1fr}
+  .container{padding:20px 12px}
+  .card{padding:13px}
+}
+@media(max-width:360px){
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#home">📗 JVS <span>Help Study</span></a>
+    <nav>
+      <a href="#home">होम</a>
+      <a href="#classes">कक्षाएँ</a>
+      <a href="#quiz">MCQ टेस्ट</a>
+      <a href="#notes">Notes/PDF</a>
+      <a href="#videos">वीडियो</a>
+      <a href="#contact">संपर्क</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <h1>JVS Help Study 📚</h1>
+  <p>सीखो • अभ्यास करो • आगे बढ़ो</p>
+  <p>कक्षा 6 से 10 तक की पढ़ाई, MCQ टेस्ट और नोट्स — एक ही जगह।</p>
+  <a class="btn" href="#classes">पढ़ाई शुरू करें →</a>
+  <a class="btn secondary" href="#quiz">MCQ टेस्ट दें</a>
+</section>
+
+<section class="container" id="classes">
+  <h2 class="section-title">📚 अपनी कक्षा चुनें</h2>
+  <p class="subtitle">अपनी कक्षा चुनकर टेस्ट और पढ़ाई शुरू करें।</p>
+  <div class="grid" id="classGrid"></div>
+</section>
+
+<section class="container" id="quiz">
+  <h2 class="section-title">📝 MCQ Quiz और टेस्ट</h2>
+  <p class="subtitle">उत्तर चुनो, टेस्ट जमा करो और अपना स्कोर देखो।</p>
+  <div class="panel">
+    <div class="controls">
+      <div>
+        <label for="quizClass">कक्षा चुनें</label>
+        <select id="quizClass">
+          <option value="6">कक्षा 6</option>
+          <option value="7">कक्षा 7</option>
+          <option value="8">कक्षा 8</option>
+          <option value="9" selected>कक्षा 9</option>
+          <option value="10">कक्षा 10</option>
+        </select>
+      </div>
+      <div>
+        <label for="quizSubject">विषय चुनें</label>
+        <select id="quizSubject">
+          <option value="गणित">गणित</option>
+          <option value="विज्ञान">विज्ञान</option>
+          <option value="सामान्य ज्ञान">सामान्य ज्ञान</option>
+        </select>
+      </div>
+    </div>
+    <div class="notice">यह अभ्यास के लिए नमूना प्रश्नपत्र है। वास्तविक परीक्षा के प्रश्नों के लिए अपनी पाठ्यपुस्तक से अभ्यास करें।</div>
+    <div id="quizArea"></div>
+    <div class="actions">
+      <button class="btn" id="submitQuiz">टेस्ट जमा करें</button>
+      <button class="btn secondary" id="resetQuiz">फिर से टेस्ट दें</button>
+    </div>
+    <div id="quizResult" class="hidden" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="container" id="notes">
+  <h2 class="section-title">📖 Notes और PDF</h2>
+  <p class="subtitle">नोट्स पढ़ें या अपनी डिवाइस से PDF जोड़कर इस ब्राउज़र में देखें।</p>
+  <div class="panel">
+    <h3>नोट्स खोजें</h3>
+    <label for="noteSearch">नोट्स का नाम</label>
+    <input id="noteSearch" placeholder="जैसे गणित, विज्ञान, कक्षा 9">
+    <div id="notesList"></div>
+    <hr style="border:0;border-top:1px solid var(--border);margin:18px 0">
+    <h3>अपनी PDF खोलें</h3>
+    <label for="pdfFile">मोबाइल से PDF चुनें</label>
+    <input id="pdfFile" type="file" accept="application/pdf,.pdf">
+    <p class="small">PDF केवल आपके ब्राउज़र में खुलेगी। वेबसाइट पर दूसरे विद्यार्थियों के लिए अपलोड नहीं होगी।</p>
+    <div id="pdfArea"></div>
+  </div>
+</section>
+
+<section class="container" id="videos">
+  <h2 class="section-title">▶️ YouTube पढ़ाई वीडियो</h2>
+  <p class="subtitle">YouTube वीडियो का लिंक डालकर यहाँ देख सकते हैं।</p>
+  <div class="panel">
+    <label for="videoUrl">YouTube वीडियो लिंक</label>
+    <input id="videoUrl" type="url" placeholder="https://www.youtube.com/watch?v=...">
+    <div class="actions">
+      <button class="btn" id="loadVideo">वीडियो खोलें</button>
+      <a class="btn secondary" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube खोलें ↗</a>
+    </div>
+    <p id="videoMessage" class="small" aria-live="polite"></p>
+    <div id="videoArea"></div>
+  </div>
+</section>
+
+<section class="container" id="scores">
+  <h2 class="section-title">🏆 स्कोर और रिजल्ट</h2>
+  <p class="subtitle">इस डिवाइस पर सेव हुए पिछले टेस्ट के परिणाम।</p>
+  <div class="panel">
+    <div id="scoreList"></div>
+    <button class="btn danger" id="clearScores">सभी सेव स्कोर मिटाएँ</button>
+  </div>
+</section>
+
+<section class="container" id="contact">
+  <h2 class="section-title">✉️ Contact Us</h2>
+  <p class="subtitle">कोई सवाल या सुझाव है? अपना संदेश तैयार करें।</p>
+  <div class="panel">
+    <form id="contactForm">
+      <label for="studentName">आपका नाम</label>
+      <input id="studentName" required maxlength="80" placeholder="अपना नाम लिखें">
+      <label for="studentEmail">ईमेल (वैकल्पिक)</label>
+      <input id="studentEmail" type="email" placeholder="example@email.com">
+      <label for="contactMessage">आपका संदेश</label>
+      <textarea id="contactMessage" required maxlength="1500" rows="4" placeholder="अपना संदेश लिखें"></textarea>
+      <button class="btn" type="submit">ईमेल में संदेश तैयार करें</button>
+      <p class="small">यह फॉर्म आपके ईमेल ऐप को खोलने की कोशिश करेगा। संदेश भेजने के लिए ईमेल ऐप में Send दबाना होगा।</p>
+    </form>
+    <p id="contactStatus" aria-live="polite"></p>
+    <p class="small">वेबसाइट: JVS Help Study | शिक्षा सभी के लिए 📗</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p><strong>📗 JVS Help Study</strong></p>
+  <p>सीखो • अभ्यास करो • आगे बढ़ो</p>
+  <p class="small">© <span id="year"></span> JVS Help Study. पढ़ते रहो, बढ़ते रहो!</p>
+</footer>
+
+<script>
+"use strict";
+
+const $ = id => document.getElementById(id);
+const classes = [6,7,8,9,10];
+
+$("year").textContent = new Date().getFullYear();
+
+$("classGrid").innerHTML = classes.map(c => `
+  <article class="card class-card">
+    <div class="class-icon">📘</div>
+    <h3>कक्षा ${c}</h3>
+    <p>MCQ टेस्ट और अभ्यास</p>
+    <button class="btn class-start" data-class="${c}">शुरू करें</button>
+  </article>
+`).join("");
+
+document.querySelectorAll(".class-start").forEach(button => {
+  button.addEventListener("click", () => {
+    $("quizClass").value = button.dataset.class;
+    renderQuiz();
+    $("quiz").scrollIntoView({behavior:"smooth"});
+  });
+});
+
+/* नमूना अभ्यास प्रश्न */
+const questionBank = {
+  "गणित": [
+    {q:"12 × 8 का मान क्या है?",o:["86","96","108","88"],a:1},
+    {q:"एक त्रिभुज के तीनों कोणों का योग कितना होता है?",o:["90°","180°","270°","360°"],a:1},
+    {q:"√81 का मान क्या है?",o:["7","8","9","10"],a:2},
+    {q:"5² का मान क्या है?",o:["10","15","20","25"],a:3},
+    {q:"1 किलोमीटर में कितने मीटर होते हैं?",o:["100","500","1000","10000"],a:2}
+  ],
+  "विज्ञान": [
+    {q:"पौधे अपना भोजन मुख्यतः किस प्रक्रिया से बनाते हैं?",o:["प्रकाश संश्लेषण","वाष्पीकरण","गलन","संघनन"],a:0},
+    {q:"पानी का रासायनिक सूत्र क्या है?",o:["CO₂","O₂","H₂O","NaCl"],a:2},
+    {q:"बल की SI इकाई क्या है?",o:["जूल","न्यूटन","वाट","मीटर"],a:1},
+    {q:"मानव शरीर में रक्त पंप करने वाला अंग कौन-सा है?",o:["फेफड़ा","मस्तिष्क","हृदय","गुर्दा"],a:2},
+    {q:"सामान्य वायुदाब पर पानी लगभग कितने °C पर उबलता है?",o:["0°C","50°C","100°C","200°C"],a:2}
+  ],
+  "सामान्य ज्ञान": [
+    {q:"भारत की राजधानी क्या है?",o:["पटना","नई दिल्ली","मुंबई","जयपुर"],a:1},
+    {q:"बिहार की राजधानी क्या है?",o:["गया","भागलपुर","पटना","पूर्णिया"],a:2},
+    {q:"भारत का राष्ट्रीय पशु कौन है?",o:["शेर","बाघ","हाथी","हिरण"],a:1},
+    {q:"एक सप्ताह में कितने दिन होते हैं?",o:["5","6","7","8"],a:2},
+    {q:"सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",o:["पृथ्वी","मंगल","शनि","बृहस्पति"],a:3}
+  ]
+};
+
+let currentQuestions = [];
+let submitted = false;
+
+function renderQuiz(){
+  const subject = $("quizSubject").value;
+  const cls = $("quizClass").value;
+  currentQuestions = questionBank[subject];
+  submitted = false;
+  $("quizResult").classList.add("hidden");
+  $("submitQuiz").disabled = false;
+
+  $("quizArea").innerHTML = currentQuestions.map((q,i) => `
+    <div class="question" data-question="${i}">
+      <p>${i+1}. ${q.q}</p>
+      ${q.o.map((option,j) => `
+        <label class="option">
+          <input type="radio" name="answer${i}" value="${j}">
+          <span>${option}</span>
+        </label>
+      `).join("")}
+    </div>
+  `).join("");
+}
+
+$("quizClass").addEventListener("change", renderQuiz);
+$("quizSubject").addEventListener("change", renderQuiz);
+
+$("submitQuiz").addEventListener("click", () => {
+  if(submitted) return;
+  const unanswered = currentQuestions.filter((q,i) =>
+    !document.querySelector(`input[name="answer${i}"]:checked`)
+  ).length;
+
+  if(unanswered > 0 && !confirm(
+    `${unanswered} प्रश्नों का उत्तर नहीं दिया गया है। क्या टेस्ट जमा करना है?`
+  )) return;
+
+  let score = 0;
+  currentQuestions.forEach((q,i) => {
+    const selected = document.querySelector(`input[name="answer${i}"]:checked`);
+    const questionEl = document.querySelector(`[data-question="${i}"]`);
+    const labels = questionEl.querySelectorAll(".option");
+    labels.forEach((label,j) => {
+      if(j === q.a) label.classList.add("correct");
+      if(selected && Number(selected.value) === j && j !== q.a)
+        label.classList.add("wrong");
+    });
+    if(selected && Number(selected.value) === q.a) score++;
+  });
+
+  submitted = true;
+  $("submitQuiz").disabled = true;
+
+  const result = {
+    cls:$("quizClass").value,
+    subject:$("quizSubject").value,
+    score,
+    total:currentQuestions.length,
+    date:new Date().toLocaleString("hi-IN")
+  };
+
+  let scores = getScores();
+  scores.unshift(result);
+  scores = scores.slice(0,50);
+
+  try {
+    localStorage.setItem("jvsHelpStudyScores",JSON.stringify(scores));
+  } catch(e) {
+    console.warn("स्कोर इस ब्राउज़र में सेव नहीं हो पाया।",e);
+  }
+
+  $("quizResult").classList.remove("hidden");
+  $("quizResult").innerHTML = `
+    <div class="result">
+      <h3>🎉 आपका रिजल्ट</h3>
+      <div class="score-number">${score}/${currentQuestions.length}</div>
+      <p>कक्षा ${result.cls} • ${result.subject}</p>
+      <p>प्रतिशत: ${Math.round(score/currentQuestions.length*100)}%</p>
+      <p>${score === currentQuestions.length
+        ? "बहुत बढ़िया! सभी उत्तर सही हैं।"
+        : "अच्छी कोशिश! सही उत्तर देखकर दोबारा अभ्यास करें।"}</p>
+    </div>
+  `;
+  renderScores();
+  $("quizResult").scrollIntoView({behavior:"smooth",block:"nearest"});
+});
+
+$("resetQuiz").addEventListener("click",renderQuiz);
+
+function getScores(){
+  try {
+    const data = JSON.parse(localStorage.getItem("jvsHelpStudyScores") || "[]");
+    return Array.isArray(data) ? data : [];
+  } catch(e) {
+    return [];
+  }
+}
+
+function renderScores(){
+  const scores = getScores();
+  if(!scores.length){
+    $("scoreList").innerHTML = '<p>अभी कोई टेस्ट रिजल्ट सेव नहीं है। पहले MCQ टेस्ट दें।</p>';
+    return;
+  }
+
+  $("scoreList").innerHTML = scores.map((s,i) => `
+    <div class="note-item">
+      <strong>${i+1}. कक्षा ${escapeHTML(s.cls)} — ${escapeHTML(s.subject)}</strong>
+      <div>स्कोर: ${Number(s.score)}/${Number(s.total)} (${Math.round(Number(s.score)/Math.max(1,Number(s.total))*100)}%)</div>
+      <div class="small">${escapeHTML(s.date || "")}</div>
+    </div>
+  `).join("");
+}
+
+$("clearScores").addEventListener("click",() => {
+  if(!confirm("क्या आप इस डिवाइस के सभी सेव स्कोर मिटाना चाहते हैं?")) return;
+  try { localStorage.removeItem("jvsHelpStudyScores"); } catch(e) {}
+  renderScores();
+});
+
+/* नमूना नोट्स: ये संक्षिप्त अभ्यास सामग्री है, पूरी पाठ्यपुस्तक नहीं। */
+const notes = [
+  {title:"कक्षा 6 — गणित अभ्यास",desc:"जोड़, घटाव, गुणा, भाग और भिन्नों का अभ्यास।",text:"गणित में सवाल को ध्यान से पढ़ें। पहले दी गई जानकारी लिखें, फिर सही गणना करें।"},
+  {title:"कक्षा 7 — विज्ञान अभ्यास",desc:"पौधे, जल और सामान्य विज्ञान की पुनरावृत्ति।",text:"पौधों को प्रकाश, पानी और कार्बन डाइऑक्साइड की जरूरत होती है।"},
+  {title:"कक्षा 8 — गणित अभ्यास",desc:"परिमेय संख्याएँ और बीजगणित की शुरुआत।",text:"समीकरण हल करते समय दोनों पक्षों पर समान संक्रिया करें।"},
+  {title:"कक्षा 9 — विज्ञान अभ्यास",desc:"पदार्थ और गति की बुनियादी अवधारणाएँ।",text:"चाल = तय की गई दूरी ÷ लगा समय। SI पद्धति में चाल की इकाई मीटर प्रति सेकंड है।"},
+  {title:"कक्षा 9 — गणित अभ्यास",desc:"संख्या पद्धति और बहुपद का परिचय।",text:"बहुपद में चर की घातें अशून्य या शून्य धनात्मक पूर्णांक होती हैं।"},
+  {title:"कक्षा 10 — विज्ञान अभ्यास",desc:"रसायन विज्ञान और भौतिक विज्ञान की पुनरावृत्ति।",text:"रासायनिक समीकरण को संतुलित करते समय दोनों ओर हर तत्व के परमाणुओं की संख्या बराबर रखें।"}
+];
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
+}
+
+function renderNotes(){
+  const query = $("noteSearch").value.trim().toLowerCase();
+  const filtered = notes.filter(n =>
+    (n.title+" "+n.desc).toLowerCase().includes(query)
+  );
+  $("notesList").innerHTML = filtered.length ? filtered.map(n => `
+    <div class="note-item">
+      <strong>${escapeHTML(n.title)}</strong>
+      <p>${escapeHTML(n.desc)}</p>
+      <button class="btn secondary show-note"
+        data-title="${escapeHTML(n.title)}"
+        data-text="${escapeHTML(n.text)}">नोट्स पढ़ें</button>
+      <div class="note-content hidden"></div>
+    </div>
+  `).join("") : "<p>इस नाम से कोई नमूना नोट्स नहीं मिला। अपनी PDF चुनकर भी पढ़ सकते हैं।</p>";
+
+  document.querySelectorAll(".show-note").forEach(button => {
+    button.addEventListener("click",() => {
+      const content = button.nextElementSibling;
+      content.classList.toggle("hidden");
+      content.textContent = content.classList.contains("hidden")
+        ? "" : button.dataset.text;
+      button.textContent = content.classList.contains("hidden")
+        ? "नोट्स पढ़ें" : "नोट्स बंद करें";
+    });
+  });
+}
+$("noteSearch").addEventListener("input",renderNotes);
+
+let currentPdfUrl = null;
+$("pdfFile").addEventListener("change",() => {
+  if(currentPdfUrl) URL.revokeObjectURL(currentPdfUrl);
+  currentPdfUrl = null;
+  $("pdfArea").replaceChildren();
+
+  const file = $("pdfFile").files[0];
+  if(!file) return;
+
+  if(file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")){
+    $("pdfArea").textContent = "कृपया PDF फाइल चुनें।";
+    return;
+  }
+
+  currentPdfUrl = URL.createObjectURL(file);
+  const link = document.createElement("a");
+  link.href = currentPdfUrl;
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.className = "btn";
+  link.textContent = "PDF खोलें: " + file.name;
+  $("pdfArea").appendChild(link);
+});
+
+/* YouTube लिंक को सुरक्षित रूप से पहचानना */
+$("loadVideo").addEventListener("click",() => {
+  const raw = $("videoUrl").value.trim();
+  $("videoArea").replaceChildren();
+  $("videoMessage").textContent = "";
+
+  let url;
+  try { url = new URL(raw); }
+  catch(e) {
+    $("videoMessage").textContent = "कृपया सही YouTube लिंक डालें।";
+    return;
+  }
+
+  const host = url.hostname.toLowerCase().replace(/^www\./,"");
+  let id = "";
+
+  if(host === "youtu.be"){
+    id = url.pathname.split("/").filter(Boolean)[0] || "";
+  } else if(["youtube.com","m.youtube.com","youtube-nocookie.com"].includes(host)){
+    if(url.pathname === "/watch") id = url.searchParams.get("v") || "";
+    else {
+      const match = url.pathname.match(/^\/(embed|shorts)\/([^/]+)/);
+      if(match) id = match[2];
+    }
+  }
+
+  if(!/^[a-zA-Z0-9_-]{11}$/.test(id)){
+    $("videoMessage").textContent = "मान्य YouTube वीडियो लिंक डालें।";
+    return;
+  }
+
+  const frame = document.createElement("iframe");
+  frame.className = "video-frame";
+  frame.title = "YouTube पढ़ाई वीडियो";
+  frame.src = "https://www.youtube-nocookie.com/embed/" + id;
+  frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  frame.allowFullscreen = true;
+  frame.referrerPolicy = "strict-origin-when-cross-origin";
+  $("videoArea").appendChild(frame);
+});
+
+/* Contact फॉर्म: कोई सर्वर या ईमेल सेवा अपने-आप जुड़ी नहीं है */
+$("contactForm").addEventListener("submit",event => {
+  event.preventDefault();
+  const name = $("studentName").value.trim();
+  const email = $("studentEmail").value.trim();
+  const message = $("contactMessage").value.trim();
+
+  if(!name || !message){
+    $("contactStatus").textContent = "कृपया नाम और संदेश भरें।";
+    return;
+  }
+
+  const body = `नाम: ${name}\nईमेल: ${email || "नहीं दिया"}\n\nसंदेश:\n${message}`;
+  const mailto = "mailto:?subject=" +
+    encodeURIComponent("JVS Help Study - Contact Message") +
+    "&body=" + encodeURIComponent(body);
+
+  $("contactStatus").textContent =
+    "आपका ईमेल ऐप खुलने पर प्राप्तकर्ता का ईमेल पता भरें और Send दबाएँ। यदि ऐप नहीं खुलता, तो संदेश कॉपी करके स्वयं भेजें।";
+
+  window.location.href = mailto;
+});
+
+renderQuiz();
+renderNotes();
+renderScores();
+</script>
+</body>
+</html>
